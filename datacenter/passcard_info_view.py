@@ -8,10 +8,10 @@ from django.utils.timezone import localtime
 def passcard_info_view(request, passcode):
     passcard = Passcard.objects.get(passcode=passcode)
     visits = Visit.objects.filter(passcard=passcard)
-    this_passcard_visits = []
+    serialized_visits = []
 
     for visit in visits:
-        this_passcard_visits.append(
+        serialized_visits.append(
             {
                 'entered_at': localtime(visit.entered_at),
                 'duration': format_duration(get_duration(visit)),
@@ -21,6 +21,6 @@ def passcard_info_view(request, passcode):
 
     context = {
         'passcard': passcard,
-        'this_passcard_visits': this_passcard_visits
+        'this_passcard_visits': serialized_visits
     }
     return render(request, 'passcard_info.html', context)
