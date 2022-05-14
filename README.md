@@ -12,7 +12,7 @@
 pip install -r requirements.txt
 ```
 
-Перед запуском проекта заполните переменный `SECRET_KEY`, `DATABASE_PASSWORD`, `DATABASE_USER`, `DATABASE_NAME`, `DATABASE_PORT`, `DATABASE_HOST` и `DATABASE_ENGINE` в файле `.env`
+Перед запуском проекта заполните переменный `SECRET_KEY`, `DATABASE_PASSWORD`, `DATABASE_USER`, `DATABASE_NAME`, `DATABASE_PORT`, `DATABASE_HOST` и `DATABASE_ENGINE` в файле `.env`. Подробнее можно почитать в [документации](https://docs.djangoproject.com/en/4.0/ref/databases/#postgresql-notes).
 
 Чтобы запустить проект используйте команду:
 ```
